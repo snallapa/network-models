@@ -53,7 +53,7 @@ class Graph extends Component {
           const simulation = forceSimulation().force("link", forceLink().id(function(d) { return 4; }))
           .force("center", forceCenter(width / 2, height / 2))
           .force("many-body", forceManyBody().strength(() => {
-              return -300;
+              return this.props.charge;
           }));
           const lines = svg.selectAll("line");
           const circles = svg.selectAll("circle");

@@ -8,6 +8,9 @@ html {
     color: white;
     font-family: 'Roboto', sans-serif;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header__model {
@@ -34,8 +37,9 @@ html {
 }
 
 .header__input {
-    float: right;
     margin-right: 8px;
+    display: flex;
+    align-items: center;
 }
 
 label {

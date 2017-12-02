@@ -7,7 +7,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {mode: "ER", numberNodes: 10, p: 20};
+    this.state = {mode: "ER", numberNodes: 25, p: 20};
     this.onModeChange = this.onModeChange.bind(this);
     this.onNodesChange = this.onNodesChange.bind(this);
     this.onProbChange = this.onProbChange.bind(this);
