@@ -1,4 +1,4 @@
-import {createErdosRenyi, createWattsStrogatz} from "./models";
+import {createErdosRenyi, createWattsStrogatz, createBarabasiAlbert} from "./models";
 import React from 'react';
 import Graph from "./Graph";
 function createGraph(WrappedComponent, createEdges) {
@@ -6,11 +6,10 @@ function createGraph(WrappedComponent, createEdges) {
         render() {
             let nodes = [];
             for (let i = 0; i < this.props.numberNodes; i++) {
-                nodes.push({id: i});
+                nodes.push({id: i, degree: 0});
             }
-            const edges = createEdges(nodes, this.props.p);
+            const edges = createEdges(nodes, this.props.graphParameter);
             const charge = -1 * (nodes.length * nodes.length) / (edges.length) * 5;
-            console.log(charge);
             return <WrappedComponent nodes={nodes} edges={edges} charge={charge} />
         }
     }
@@ -18,3 +17,4 @@ function createGraph(WrappedComponent, createEdges) {
 
 export const ErdosRenyiGraph = createGraph(Graph, createErdosRenyi);
 export const WattsStrogatz = createGraph(Graph, createWattsStrogatz);
+export const BarabasiAlbert = createGraph(Graph, createBarabasiAlbert);
